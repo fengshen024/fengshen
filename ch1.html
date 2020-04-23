@@ -1,0 +1,124 @@
+
+<title>Submit Code</title>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel=stylesheet href='./include/hoj.css' type='text/css'>
+</head>
+<table width=100% class=toprow><tr align=center>
+	<td width=15%><a class=hd href='./'>Home</a>
+	<!--<td width=15%><a class=hd href='./bbs.php?cid=4346'>Web Board</a>-->
+	<td width=15%><a class=hd href='./contest.php?cid=4346'>ProblemSet</a>
+	<td width=15%><a class=hd href='./contestrank.php?cid=4346'>Standing</a>
+	<td width=15%><a class=hd href='./status.php?cid=4346'>Status</a>
+	<td width=15%><a class=hd href='./conteststatistics.php?cid=4346'>Statistics</a>
+</tr></table>
+
+<div id=broadcast>
+<marquee id=broadcast scrollamount=1 direction=up scrolldelay=250 onMouseOver='this.stop()' onMouseOut='this.start()';>
+</marquee></div><!--end broadcast-->
+<div id=main>
+<center>
+<script language="Javascript" type="text/javascript" src="edit_area/edit_area_full.js"></script>
+<script language="Javascript" type="text/javascript">
+
+editAreaLoader.init({
+	        id: "source"            
+	        ,start_highlight: true 
+	        ,allow_resize: "both"
+	        ,allow_toggle: true
+	        ,word_wrap: true
+	        ,language: "en"
+	        ,syntax: "cpp"  
+			,font_size: "8"
+	        ,syntax_selection_allow: "basic,c,cpp,java,pas,perl,php,python,ruby"
+			,toolbar: "search, go_to_line, fullscreen, |, undo, redo, |, select_font,syntax_selection,|, change_smooth_selection, highlight, reset_highlight, word_wrap, |, help"          
+	});
+</script>
+<script src="include/checksource.js">
+
+</script>
+<form action="submit.php" method="post" 
+ 
+ >
+Problem <span class=blue><b>D</b></span> of Contest <span class=blue><b>4346</b></span><br>
+<input type='hidden' value='4346' name="cid">
+<input type='hidden' value='3' name="pid">
+Language:
+<select id="language" name="language">
+	    <option value=0 >C</option>	<option value=1 selected>C++</option>		<option value=2 >Pascal</option>		<option value=3 >Java</option>		<option value=4 >Ruby</option>		<option value=5 >Bash</option>		<option value=6 >Python</option>		<option value=7 >PHP</option>		<option value=8 >Perl</option>		<option value=9 >C-Sharp</option></select>
+<br>
+<textarea cols=80 rows=20 id="source" name="source">#include<iostream>
+#include<cmath>
+using namespace std;
+int f(int x,int y,int z)
+{
+    return 2*(x-y+z);
+}
+int f(int x,int y)
+{
+    return 2*(x-y);
+}
+int f(int x)
+{
+    return 2*(x-1);
+}
+
+int main()
+{
+    int n, x, y, z;
+    while(cin>>n)
+    {
+        if(n == 3)
+        {
+            cin>>x>>y>>z;
+            cout<<f(x, y, z)<<endl;
+        }
+        if(n == 2)
+        {
+            cin>>x>>y;
+            cout<<f(x, y)<<endl;
+        }
+        if(n == 1)
+        {
+            cin>>x;
+            cout<<f(x)<<endl;
+        }
+        if(n == 0)
+            break;
+    }
+}
+</textarea><br>
+
+<input type=submit value="Submit">
+<input type=reset value="Reset">
+</form>
+</center>
+<div id=foot>
+ <!--<br>
+
+<a href="./"><span class=red>HOME</span></a>
+<a href="javascript:history.go(-1)"><span class=red>Back</span></a>
+
+<hr>
+-->
+<center>
+	<p style="font-size:80%;">
+			<a href=setlang.php?lang=ko>한국어<&nbsp;&nbsp;
+		<a href=setlang.php?lang=cn>中文</a>&nbsp;
+		<a href=setlang.php?lang=fa>فارسی</a>&nbsp;
+		<a href=setlang.php?lang=en>English</a>&nbsp;
+		<a href=setlang.php?lang=th>ไทย</a>
+			<br>
+		All Copyright Reserved 2010-2011 <a href='./'>SDUSTOJ</a> TEAM<br>
+		<a href=gpl-2.0.txt><span class=green>GPL2.0</span></a> 2003-2011 <a href='http://code.google.com/p/hustoj/'>HUSTOJ Project</a> TEAM<br>
+		Anything about the Problems, Please Contact Admin:<a href="mailto:root@localhost">admin</a><br>
+		
+	</p>
+</center>
+</div><!--end foot-->
+</div><!--end main-->
+</body>
+</html>
+<!--not cached-->
+
